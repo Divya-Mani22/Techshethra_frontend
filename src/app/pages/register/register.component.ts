@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   paymentStatus = 'PENDING';
 
   // --- Timer Variables ---
-  private deadline = new Date('2026-02-20T23:59:59').getTime();
+  private deadline = new Date('2026-03-01T23:59:59').getTime();
   public timeLeft: any = { days: 0, hours: 0, minutes: 0, seconds: 0 };
   private timerSubscription!: Subscription;
   public isRegistrationClosed = false;
