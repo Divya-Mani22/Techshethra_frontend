@@ -1,0 +1,62 @@
+<div class="register-container">
+  <h2>Hackathon Team Registration</h2>
+
+  <div class="timer-wrapper" *ngIf="!isRegistrationClosed">
+    <p class="timer-label">⏳ Registration Ends In:</p>
+    <div class="countdown-display">
+      <div class="time-segment">
+        <span class="value">{{ timeLeft.days }}</span>
+        <span class="label">Days</span>
+      </div>
+      <div class="time-segment">
+        <span class="value">{{ timeLeft.hours }}</span>
+        <span class="label">Hrs</span>
+      </div>
+      <div class="time-segment">
+        <span class="value">{{ timeLeft.minutes }}</span>
+        <span class="label">Min</span>
+      </div>
+      <div class="time-segment">
+        <span class="value">{{ timeLeft.seconds }}</span>
+        <span class="label">Sec</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="closed-banner" *ngIf="isRegistrationClosed">
+    <div class="icon">🚫</div>
+    <h3>Registration Closed!</h3>
+    <p>The deadline for Techshethra Code-verse has passed. Thank you for your interest.</p>
+  </div>
+
+  <div class="form-content" *ngIf="!isRegistrationClosed">
+    <input type="text" placeholder="Team Name" [(ngModel)]="teamName" required>
+    <input type="text" placeholder="Team Leader Name" [(ngModel)]="leaderName" required>
+    <input type="email" placeholder="Leader Email" [(ngModel)]="leaderEmail" required>
+    <input type="text" placeholder="Leader Phone Number" [(ngModel)]="leaderPhone" required>
+
+    <div class="members-group">
+      <input type="text" placeholder="Team Member 2 (optional)" [(ngModel)]="member2">
+      <input type="text" placeholder="Team Member 3 (optional)" [(ngModel)]="member3">
+      <input type="text" placeholder="Team Member 4 (optional)" [(ngModel)]="member4">
+    </div>
+
+    <label class="payment-label">Payment Method</label>
+    <select [(ngModel)]="paymentMode" required class="payment-select">
+      <option value="">Select Payment</option>
+      <option value="GPAY">GPay</option>
+    </select>
+
+    <div class="qr-box" *ngIf="paymentMode === 'GPAY'">
+      <p>Scan GPay QR to Pay</p>
+      <img src="assets/gpay-qr.png" alt="GPay QR Code">
+    </div>
+
+    <input type="text"
+           placeholder="Enter Transaction ID"
+           [(ngModel)]="transactionId"
+           required>
+
+    <button class="register-btn" (click)="submitForm()">Register Now</button>
+  </div>
+</div>

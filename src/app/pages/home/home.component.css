@@ -1,0 +1,96 @@
+/* Container for all center elements */
+.center-content {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  gap: 15px; /* Items-ku nadula uniform gap */
+}
+
+/* Griffin or Main Center Logo */
+.center-logo {
+  
+  width: 300px;           
+  height: auto;
+  margin-bottom: 10px;
+  /* Light gold glow for the logo */
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+}
+
+/* Main HACKATHON Text Image */
+.hackathon-title-img {
+  max-width: 800px;
+  width: 60%;
+  height: auto;
+  display: block;
+  padding-bottom:5%;
+}
+
+/* Wrapper for the second text image */
+.text-one-container {
+  width: 300%;
+  display: flex;
+  justify-content: center;
+  margin-top: -10px; /* First image-kuda close-ah iruka negative margin */
+}
+
+/* Special Text Image (center text1) */
+.special-text-img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  /* Specific glow for the subtitle text */
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+/* Innovate • Build • Win Tagline */
+.tagline {
+  font-size: 22px;
+  font-weight: bold;
+  color: gold;
+  letter-spacing: 3px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .center-logo {
+    width: 150px;
+  }
+
+  .hackathon-title-img {
+    max-width: 320px;
+  }
+
+  .special-text-img {
+    max-width: 280px;
+  }
+
+  .tagline {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+}
+/* FULL PAGE BACKGROUND */
+.page home {
+  height: 100vh;           /* 100% viewport height */
+  width: 100vw;            /* 100% viewport width */
+  overflow: hidden;        /* Ithu thaan scroll-ah block pannum */
+  background: url("/bg1.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;  /* Header, content, footer-ah vertical-ah stack panna */
+}
+
+/* Scroll aagama irukka content area-va adjust pannuvom */
+.page-wrapper home {
+  flex: 1;                 /* Remaining space-ah content yeduthukkum */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;        /* Ingaum hidden kudutha ulla iruka content-um scroll aagathu */
+}

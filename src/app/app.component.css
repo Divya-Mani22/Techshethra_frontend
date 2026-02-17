@@ -1,0 +1,122 @@
+/* Box sizing adjustment */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden; /* Side scroll-a thadukkum */
+  width: 100%;
+}
+
+/* Image scaling */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* FULL PAGE BACKGROUND */
+.page {
+  min-height: 100vh;
+  background: url("/bg1.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* HEADER */
+/* HEADER */
+.header {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Logos-ah corner-la vaikum, ana container-kulla */
+  align-items: center;
+  gap: 20px;
+}
+
+.side-logo {
+  width: 100px; /* Screenshot-la iruka mathiri size */
+  height: auto;
+}
+.center-text-img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+}
+
+/* LOGOS + DEPARTMENT NAME */
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+}
+
+.logos img {
+  width: 90px;
+}
+
+.dept-name {
+  flex: 1;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: gold;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px gold;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+  background: rgba(0, 0, 0, 0.5); /* Background transparent-ah kudutha theme-oda ottum */
+  z-index: 1000;
+  width: 100%;
+}
+.navbar a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.navbar a:hover, .navbar a.active {
+  color: white;
+  text-shadow: 0 0 10px gold;
+}
+.page-wrapper {
+  min-height: calc(100vh - 220px);
+  background: url("/bg.png") no-repeat center center fixed;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-content {
+  width: 100%;
+  max-width: 450px;   /* 👈 form width control */
+  padding: 20px;
+}
+
+
+
+
+/* FOOTER */
+footer {
+  margin-top: 120px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(5, 0, 0, 0.75);
+  font-size: 14px;
+}

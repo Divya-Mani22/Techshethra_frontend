@@ -1,0 +1,21 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <h2>Admin Access</h2>
+    <p>Please enter credentials to manage registrations</p>
+
+    <form (ngSubmit)="onLogin()">
+      <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="username" [(ngModel)]="loginData.username" required>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password" [(ngModel)]="loginData.password" required>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,177 @@
+.register-container {
+  width: 420px;
+  margin: 40px auto;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 12px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: gold;
+}
+
+.register-container input,
+.register-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.register-container label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.qr-box {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.qr-box img {
+  width: 180px;
+  border: 2px solid gold;
+  border-radius: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: gold;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #ffcc00;
+}
+/* --- Timer Section Styling --- */
+.timer-wrapper {
+  text-align: center;
+  background: rgba(255, 215, 0, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px dashed gold;
+  margin-bottom: 20px;
+}
+
+.timer-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: gold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown-display {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.time-segment {
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid gold;
+  min-width: 60px;
+  padding: 8px 5px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+.time-segment .value {
+  font-size: 20px;
+  font-weight: bold;
+  color: gold;
+}
+
+.time-segment .label {
+  font-size: 10px;
+  color: #ccc;
+  text-transform: uppercase;
+}
+
+/* --- Registration Closed Banner --- */
+.closed-banner {
+  text-align: center;
+  background: rgba(255, 0, 0, 0.15);
+  border: 2px solid #ff4d4d;
+  padding: 30px 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.closed-banner .icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.closed-banner h3 {
+  color: #ff4d4d;
+  margin-bottom: 10px;
+}
+
+.closed-banner p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #eee;
+}
+
+/* --- Form Improvements --- */
+.members-group {
+  margin: 15px 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.payment-label {
+  color: gold;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.payment-select {
+  cursor: pointer;
+  background: white;
+  font-weight: bold;
+}
+
+.register-btn {
+  margin-top: 10px;
+  transition: transform 0.2s;
+}
+
+.register-btn:active {
+  transform: scale(0.98);
+}
+/* Laptop-la members-a side-by-side kaatta */
+@media (min-width: 768px) {
+  .members-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+}
+
+/* Timer adjustments for small screens */
+@media (max-width: 400px) {
+  .countdown-display {
+    gap: 5px;
+  }
+  .time-segment {
+    min-width: 50px;
+  }
+}

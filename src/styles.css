@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+/* Box sizing adjustment to prevent width issues */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden; /* Side scroll-a thadukkum */
+  width: 100%;
+}
+
+/* Common Layout - Responsive View */
+.container {
+  width: 95%; /* Mobile-la 95% */
+  max-width: 1200px; /* Laptop-la limit aagidum */
+  margin: 0 auto;
+}
+/* Browser Tab Logo (Favicon) adjustment */
+link[rel="icon"] {
+  border-radius: 500%; /* Oru velai logo round-ah venum na */
+}
+/* Image scaling across all devices */

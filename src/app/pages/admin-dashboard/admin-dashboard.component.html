@@ -1,0 +1,65 @@
+<div class="dashboard-container">
+  <h2>Techshethra Code-verse Admin Dashboard</h2>
+
+  <div class="admin-actions">
+    <div class="stats-badge">
+      Total Teams: <strong>{{ totalCount }}</strong>
+    </div>
+    
+    <a href="https://chat.whatsapp.com/LU8xM1qf4wRAupTnx7dB9J" target="_blank" class="whatsapp-btn">
+      Join WhatsApp Group
+    </a>
+  </div>
+
+  <div class="search-wrapper">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      placeholder="Search Team, Leader or Transaction ID..." 
+      class="search-input"
+    >
+  </div>
+  
+  <div class="table-wrapper">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Team Name</th>
+          <th>Leader Name</th>
+          <th>Leader Phone</th>
+          <th>Transaction ID</th>
+          <th>Members</th>
+          <th>Status</th>
+          <th>Action (Edit Status)</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (reg of filteredRegistrations; track reg.id) {
+          <tr>
+            <td>{{ reg.teamName }}</td>
+            <td>{{ reg.leaderName }}</td>
+            <td>{{ reg.leaderPhone }}</td>
+            <td><strong>{{ reg.transactionId }}</strong></td>
+            <td>
+               <small>{{ reg.member2 || '-' }}, {{ reg.member3 || '-' }}, {{ reg.member4 || '-' }}</small>
+            </td>
+            <td [style.color]="getStatusColor(reg.paymentStatus)">
+              {{ reg.paymentStatus }}
+            </td>
+            <td>
+              <select (change)="onStatusUpdate(reg.id, $event)" [value]="reg.paymentStatus">
+                <option value="UNDER_REVIEW">Under Review</option>
+                <option value="PAID">Paid</option>
+                <option value="REJECTED">Rejected</option>
+              </select>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="7" style="text-align: center; color: gold;">No registrations found.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
