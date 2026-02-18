@@ -28,21 +28,23 @@
     <h3>Registration Closed!</h3>
     <p>The deadline for Techshethra Code-verse has passed. Thank you for your interest.</p>
   </div>
-
-  <div class="form-content" *ngIf="!isRegistrationClosed">
-    <input type="text" placeholder="Team Name" [(ngModel)]="teamName" required>
-    <input type="text" placeholder="Team Leader Name" [(ngModel)]="leaderName" required>
-    <input type="email" placeholder="Leader Email" [(ngModel)]="leaderEmail" required>
-    <input type="text" placeholder="Leader Phone Number" [(ngModel)]="leaderPhone" required>
+<div class="form-content" *ngIf="!isRegistrationClosed">
+    <input type="text" name="teamName" placeholder="Team Name" [(ngModel)]="teamName" required>
+    
+    <input type="text" name="leaderName" placeholder="Team Leader Name" [(ngModel)]="leaderName" required>
+    
+    <input type="email" name="leaderEmail" placeholder="Leader Email" [(ngModel)]="leaderEmail" required>
+    
+    <input type="text" name="leaderPhone" placeholder="Leader Phone Number" [(ngModel)]="leaderPhone" required>
 
     <div class="members-group">
-      <input type="text" placeholder="Team Member 2 (optional)" [(ngModel)]="member2">
-      <input type="text" placeholder="Team Member 3 (optional)" [(ngModel)]="member3">
-      <input type="text" placeholder="Team Member 4 (optional)" [(ngModel)]="member4">
+      <input type="text" name="member2" placeholder="Team Member 2 (optional)" [(ngModel)]="member2">
+      <input type="text" name="member3" placeholder="Team Member 3 (optional)" [(ngModel)]="member3">
+      <input type="text" name="member4" placeholder="Team Member 4 (optional)" [(ngModel)]="member4">
     </div>
 
     <label class="payment-label">Payment Method</label>
-    <select [(ngModel)]="paymentMode" required class="payment-select">
+    <select name="paymentMode" [(ngModel)]="paymentMode" required class="payment-select">
       <option value="">Select Payment</option>
       <option value="GPAY">GPay</option>
     </select>
@@ -52,11 +54,10 @@
       <img src="assets/gpay-qr.png" alt="GPay QR Code">
     </div>
 
-    <input type="text"
-           placeholder="Enter Transaction ID"
-           [(ngModel)]="transactionId"
-           required>
+    <input type="text" name="transactionId" placeholder="Enter Transaction ID" [(ngModel)]="transactionId" required>
 
     <button class="register-btn" (click)="submitForm()">Register Now</button>
+
+ 
   </div>
 </div>
